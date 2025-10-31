@@ -1,0 +1,87 @@
+{
+  "name": "AI Notes Maker - Smart Study Tool",
+  "short_name": "AI Notes Maker",
+  "description": "AI-powered notes generator for students and teachers. Create summaries, bullet points, MCQs, and flashcards from any topic instantly.",
+  "start_url": "https://alicomputer76w.github.io/AI-Note-Maker/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "scope": "https://alicomputer76w.github.io/AI-Note-Maker/",
+  "lang": "en",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%234f46e5'/><text x='96' y='120' font-size='120' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%234f46e5'/><text x='256' y='320' font-size='320' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 144'><rect width='144' height='144' fill='%234f46e5'/><text x='72' y='90' font-size='90' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%234f46e5'/><text x='48' y='60' font-size='60' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "96x96",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'><rect width='72' height='72' fill='%234f46e5'/><text x='36' y='45' font-size='45' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' fill='%234f46e5'/><text x='24' y='30' font-size='30' text-anchor='middle' fill='white'>📝</text></svg>",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Generate Notes",
+      "short_name": "Generate",
+      "description": "Quickly generate AI-powered study notes",
+      "url": "https://alicomputer76w.github.io/AI-Note-Maker/#home",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%234f46e5'/><text x='48' y='60' font-size='60' text-anchor='middle' fill='white'>✨</text></svg>",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn more about AI Notes Maker",
+      "url": "https://alicomputer76w.github.io/AI-Note-Maker/#about",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%234f46e5'/><text x='48' y='60' font-size='60' text-anchor='middle' fill='white'>ℹ️</text></svg>",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'><rect width='1280' height='720' fill='%23f8fafc'/><rect x='40' y='40' width='1200' height='640' rx='20' fill='white' stroke='%23e2e8f0' stroke-width='2'/><text x='640' y='200' font-size='48' text-anchor='middle' fill='%234f46e5' font-family='Arial'>AI Notes Maker</text><text x='640' y='280' font-size='24' text-anchor='middle' fill='%236b7280' font-family='Arial'>Smart Study Tool for Students</text><rect x='340' y='320' width='600' height='60' rx='30' fill='%234f46e5'/><text x='640' y='360' font-size='20' text-anchor='middle' fill='white' font-family='Arial'>Generate Smart Notes</text></svg>",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "AI Notes Maker Homepage"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}
