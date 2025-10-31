@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Notes Maker - Turn Any Topic into Smart Notes Instantly</title>
+    <meta name="description" content="AI-powered notes generator for students and teachers. Create summaries, bullet points, MCQs, and flashcards from any topic instantly.">
+    <meta name="keywords" content="AI Notes Generator, Study Helper, Student Notes Maker, AI Study Tool, Educational Technology, Smart Notes">
+    <meta name="author" content="AI Notes Maker">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI Notes Maker - Smart Study Tool">
+    <meta property="og:description" content="Transform any topic into structured study material with AI-powered note generation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://texttoolspro.fun">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>AI Notes Maker</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Turn Any Topic into Smart Notes Instantly</h1>
+                <p class="hero-subtitle">AI-powered study companion that transforms your learning materials into structured notes, summaries, MCQs, and flashcards in seconds.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-lightning-bolt"></i>
+                        <span>Instant Generation</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-download"></i>
+                        <span>PDF Export</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-save"></i>
+                        <span>Local Storage</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Learning Tip -->
+    <section class="daily-tip">
+        <div class="container">
+            <div class="tip-card">
+                <i class="fas fa-lightbulb"></i>
+                <div class="tip-content">
+                    <h3>💡 Daily Learning Tip</h3>
+                    <p id="daily-tip-text">Loading tip...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-card">
+                    <h2>Generate Your Smart Notes</h2>
+                    <div class="input-group">
+                        <label for="topic-input">Enter your topic, chapter, or paste text content:</label>
+                        <textarea 
+                            id="topic-input" 
+                            placeholder="e.g., 'Photosynthesis in plants' or paste your lecture notes here..."
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="input-actions">
+                        <button id="generate-btn" class="btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Generate Notes
+                        </button>
+                        <button id="clear-btn" class="btn-secondary">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section" id="output-section" style="display: none;">
+                <div class="output-header">
+                    <h2>Your Generated Notes</h2>
+                    <div class="output-actions">
+                        <button id="save-notes-btn" class="btn-outline">
+                            <i class="fas fa-save"></i>
+                            Save Notes
+                        </button>
+                        <button id="copy-notes-btn" class="btn-outline">
+                            <i class="fas fa-copy"></i>
+                            Copy All
+                        </button>
+                        <button id="download-pdf-btn" class="btn-outline">
+                            <i class="fas fa-download"></i>
+                            Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="summary">
+                        <i class="fas fa-file-alt"></i>
+                        Summary
+                    </button>
+                    <button class="tab-btn" data-tab="bullets">
+                        <i class="fas fa-list-ul"></i>
+                        Bullet Notes
+                    </button>
+                    <button class="tab-btn" data-tab="mcqs">
+                        <i class="fas fa-question-circle"></i>
+                        MCQs
+                    </button>
+                    <button class="tab-btn" data-tab="flashcards">
+                        <i class="fas fa-clone"></i>
+                        Flashcards
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Summary Tab -->
+                    <div class="tab-pane active" id="summary-tab">
+                        <div class="content-card">
+                            <h3><i class="fas fa-file-alt"></i> Summary</h3>
+                            <div id="summary-content" class="content-area">
+                                <!-- Generated summary will appear here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bullet Notes Tab -->
+                    <div class="tab-pane" id="bullets-tab">
+                        <div class="content-card">
+                            <h3><i class="fas fa-list-ul"></i> Key Points</h3>
+                            <div id="bullets-content" class="content-area">
+                                <!-- Generated bullet points will appear here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MCQs Tab -->
+                    <div class="tab-pane" id="mcqs-tab">
+                        <div class="content-card">
+                            <h3><i class="fas fa-question-circle"></i> Multiple Choice Questions</h3>
+                            <div id="mcqs-content" class="content-area">
+                                <!-- Generated MCQs will appear here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flashcards Tab -->
+                    <div class="tab-pane" id="flashcards-tab">
+                        <div class="content-card">
+                            <h3><i class="fas fa-clone"></i> Flashcards</h3>
+                            <div id="flashcards-content" class="content-area">
+                                <!-- Generated flashcards will appear here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Notes Section -->
+            <section class="saved-notes-section">
+                <div class="saved-notes-header">
+                    <h2>Saved Notes</h2>
+                    <button id="clear-saved-btn" class="btn-outline">
+                        <i class="fas fa-trash"></i>
+                        Clear All Saved
+                    </button>
+                </div>
+                <div id="saved-notes-list" class="saved-notes-list">
+                    <!-- Saved notes will appear here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About AI Notes Maker</h2>
+                <p>AI Notes Maker is designed to revolutionize the way students and teachers create and organize study materials. Our intelligent system transforms any topic or text into comprehensive, structured notes that enhance learning and retention.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced algorithms analyze and structure your content intelligently</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Responsive Design</h3>
+                        <p>Works perfectly on all devices - desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Privacy First</h3>
+                        <p>All processing happens locally - your data never leaves your device</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Time Saving</h3>
+                        <p>Generate comprehensive study materials in seconds, not hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get in Touch</h2>
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:we9191711@gmail.com">we9191711@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/923081517640">+92 308-1517640</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://texttoolspro.fun" target="_blank">texttoolspro.fun</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/channel/UCXwM2fd2GJoHC9tNAn3Xk8w" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://web.facebook.com/sadaqat.ali.14058" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sir_sadaqat/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sadaqat-ali-391b3a38a/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/SirSadaqat" target="_blank" title="Twitter/X">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Notes Maker</span>
+                    </div>
+                    <p>Transforming education through intelligent note generation</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Notes Maker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-brain fa-spin"></i>
+            <p>Generating your smart notes...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
